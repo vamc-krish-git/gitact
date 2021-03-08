@@ -5,12 +5,22 @@ on: push
 
 jobs:
   ubuntu:
+    env:
+      JOB_ENVIRONMENT_VARIABLE: 'Job level'
     runs-on: ubuntu-latest
     steps:
     - name: This is test env 
+      env:
+        STEP_ENVIRONMENT_VARIABLE: 'This is step level'
       run: |
         echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
-        echo "this is test"
+        echo "$STEP_ENVIRONMENT_VARIABLE"
+        echo "$JOB_ENVIRONMENT_VARIABLE"
+        echo "--------------Accessing Env Variable------"
+        echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+        echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+        echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
+
   # windows:
   #   runs-on: windows-latest
   #   steps:
