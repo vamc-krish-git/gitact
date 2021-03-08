@@ -1,7 +1,7 @@
 name: first
 env:
   WORKSPACE_ENVIRONMENT_VARIABLE: 'This is custom Workspace Environment Var'
-on: [commit]
+on: push
 
 jobs:
   ubuntu:
