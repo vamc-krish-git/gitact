@@ -1,25 +1,12 @@
 name: first
-env:
-  WORKSPACE_ENVIRONMENT_VARIABLE: 'This is custom Workspace Environment Var'
+
 on: push
 
 jobs:
   ubuntu:
-    env:
-      JOB_ENVIRONMENT_VARIABLE: 'this is Job Level'
     runs-on: ubuntu-latest
     steps:
-      - env:
-        STEP_ENVIRONMENT_VARIABLE: 'Step Level'
-        run: |
-          date
-          echo "$WORKSPACE_ENVIRONMENT_VARIABLE" 
-          echo "$JOB_ENVIRONMENT_VARIABLE"
-          echo "$STEP_ENVIRONMENT_VARIABLE"
-          echo "---------------------------------"
-          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }}"
+    - run: date
   windows:
     runs-on: windows-latest
     steps:
