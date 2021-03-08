@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: This is test env 
-    run: |
-      echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
-      echo "this is test"
+      run: |
+        echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
+        echo "this is test"
   # windows:
   #   runs-on: windows-latest
   #   steps:
