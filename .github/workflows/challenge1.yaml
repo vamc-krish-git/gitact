@@ -1,0 +1,19 @@
+name: Artifact
+
+on: [push]
+
+env:
+  ARTIFACT_NAME: myartifact
+
+jobs:
+  testartifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: to checkout
+        uses: actions/checkout@v2
+
+      - name: to upload Artifact
+        uses: actions/upload-artifcate@v2
+        with:
+          name: $ARTIFACT_NAME
+          path: .
